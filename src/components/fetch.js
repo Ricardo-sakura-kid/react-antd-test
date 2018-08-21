@@ -15,11 +15,12 @@ export default class myCard extends React.Component {
     // 获取数据
     fetchFn = () => {
         fetch('../../data.json')
-            .then((res) => { console.log(res.status);return res.json() })
+            .then( res => { console.log(res.status);return res.json() })
             .then((data) => { this.setState({lists:data.listData}) })
             .catch((e) => { console.log(e.message) })
     }
 
+    // 调用fetchFn()
     componentDidMount() {
         this.fetchFn()
     }

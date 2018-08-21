@@ -37,17 +37,26 @@ class Slider extends React.Component{
     }
 
     // 此时点击的导航项
-    handleClick = (e) =>{
+    /*handleClick = (e) =>{
         this.setState({
             current:e.key
         })
-    }
-    componentDidMount(){
-        this.getUser
-    }
-    getUser = () =>{
+    }*/
+    handleClick = (e) => {
         this.setState({
-            username:'Richard'
+            current: e.key
+        })
+    }
+
+    // 调用getUser()
+    componentDidMount() {
+        this.getUser()
+    }
+
+    // username赋值
+    getUser = () => {
+        this.setState({
+            username: 'Richard'
         })
     }
 
@@ -77,7 +86,7 @@ class Slider extends React.Component{
                 </div>
                 <div id="rightWrap">
                     <Menu mode="horizontal">
-                       <SubMenu title={<span><Icon type="user" />{ this.state.username }</span>}>
+                        <SubMenu title={<span><Icon type="user" />{ this.state.username }</span>}>
                             <Menu.Item key="setting:1">退出</Menu.Item>
                         </SubMenu>
                     </Menu>
