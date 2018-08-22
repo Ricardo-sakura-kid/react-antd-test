@@ -18,6 +18,7 @@ export default class myCard extends React.Component {
             .then( res => { console.log(res.status);return res.json() })
             .then((data) => { this.setState({lists:data.listData}) })
             .catch((e) => { console.log(e.message) })
+
     }
 
     // 调用fetchFn()
@@ -29,9 +30,9 @@ export default class myCard extends React.Component {
         return (
             <Card title="资源导航" style={{ width: "800px", margin: "0 auto" }} className="animated zoomIn">
                 {
-                    this.state.lists.map((e) => {
+                    this.state.lists.map((item,index) => {
                         return (
-                            <p className="doclist"><a href={ e.url } target="_blank">{ e.title }</a></p>
+                            <p className="doclist"><a href={ item.url } target="_blank">{ item.title }</a></p>
                         )
                     })
                 }

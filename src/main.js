@@ -23,6 +23,7 @@ import './main.css'
 
 // 引入单个页面
 import myCard from './components/fetch.js'
+import myTable from './components/table.js'
 
 const ACTIVE = { color :'red'}
 
@@ -104,6 +105,7 @@ render((
     <Router history={hashHistory}>
         <Route path="/" component={Slider}>
             <IndexRoute path="myCard" component={myCard}/>
+            <Route path="myTable" component={myTable} />
             <Route path="myCard" component={myCard} />
         </Route>
     </Router>
